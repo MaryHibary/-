@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Бронирование</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Список бронирований</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Клиент</th>
+        <th>Страна</th>
+        <th>Город</th>
+        <th>Тип тура</th>
+        <th>Дата</th>
+        <th>Количество человек</th>
+        <th>Стоимость</th>
+    </tr>
+
+    {% for order in orders %}
+    <tr>
+        <td>{{ order.full_name }}</td>
+        <td>{{ order.country_name }}</td>
+        <td>{{ order.city_name }}</td>
+        <td>{{ order.type_name }}</td>
+        <td>{{ order.departurre_date }}</td>
+        <td>{{ order.persons }}</td>
+        <td>{{ order.price }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="/">← Главная</a>
+
+</body>
+</html>

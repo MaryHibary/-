@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Туры</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+
+<h1>Доступные туры</h1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Страна</th>
+        <th>Город</th>
+        <th>Тип тура</th>
+        <th>Дата выезда</th>
+        <th>Количество человек</th>
+        <th>Стоимость</th>
+    </tr>
+
+    {% for tour in tours %}
+    <tr>
+        <td>{{ tour.country_name }}</td>
+        <td>{{ tour.city_name }}</td>
+        <td>{{ tour.type_name }}</td>
+        <td>{{ tour.departurre_date }}</td>
+        <td>{{ tour.persons }}</td>
+        <td>{{ tour.price }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+
+<a href="/">← Вернуться на главную</a>
+
+</body>
+</html>
